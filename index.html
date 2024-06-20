@@ -25,6 +25,7 @@
       margin-top: 20px;
       font-size: 18px;
       color: blue;
+      visibility: hidden; /* Initially hidden */
     }
   </style>
 </head>
@@ -33,7 +34,7 @@
   <p>안녕하세요</p>
   <button id="testButton" onclick="javascriptFunction()">Click me</button>
 </div>
-<div id="message"></div>
+<div id="message">iOS 데이터 들어왔음</div> <!-- Hidden by default -->
 <script>
   function javascriptFunction() {
     console.log("Button clicked");
@@ -42,6 +43,7 @@
   function iOSToJavaScript(message) {
     console.log("Message from iOS: " + message);
     document.getElementById('message').innerText = "iOS 데이터 들어왔음: " + message;
+    document.getElementById('message').style.visibility = 'visible'; // Show the message
   }
 </script>
 </body>
