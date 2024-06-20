@@ -1,1 +1,0 @@
-# bulmang.github.io
