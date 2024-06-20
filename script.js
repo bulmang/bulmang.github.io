@@ -5,6 +5,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
   button.addEventListener("click", function() {
     alert("Button clicked!");
-    // 여기에 버튼 클릭 시 수행할 동작을 추가할 수 있습니다.
+    console.log('버튼이 눌렸습니다.');
   });
 });
