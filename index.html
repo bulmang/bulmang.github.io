@@ -1,41 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <script type="text/javascript" charset="UTF-8"></script>
-  <script type="text/javascript" charset="UTF-8">
-    function javaScriptToIOS() {
-      if (window.webkit?.messageHandlers?.serverEvent) {
-        console.log('Send Event')
-        window.webkit.messageHandlers.serverEvent.postMessage('Hello iOS')
-      } else {
-        console.log('Cannot send event')
-      }
-    }
-
-    function iOSToJavaScript() {
-      console.log('Event Occurred')
-    }
-  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Web Page</title>
   <style>
-    .button {
-      width: 500px;
-      height: 300px;
-      background-color: #4CAF50;
-      border: none;
-      color: white;
-      padding: 15px 32px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 50px;
-      margin: 4px 2px;
+    /* 간단한 스타일 추가 */
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
       cursor: pointer;
     }
   </style>
-  <title>iOS <-> JavaScript</title>
 </head>
 <body>
-<button class="button" type="button" onclick="javaScriptToIOS()">JavaScript -> iOS로 데이터 전달</button>
+<div>
+  <p>안녕하세요</p>
+  <button id="testButton" onclick="javascriptFunction()">Click me</button>
+</div>
+<script>
+  function javascriptFunction() {
+    console.log("Button clicked");
+  }
+
+  function iOSToJavaScript(message) {
+    console.log("Message from iOS: " + message);
+    alert("Message from iOS: " + message);
+  }
+</script>
 </body>
 </html>
