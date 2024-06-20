@@ -14,11 +14,17 @@
       height: 100vh;
       margin: 0;
       background-color: #f0f0f0;
+      flex-direction: column;
     }
     button {
       padding: 10px 20px;
       font-size: 16px;
       cursor: pointer;
+    }
+    #message {
+      margin-top: 20px;
+      font-size: 18px;
+      color: blue;
     }
   </style>
 </head>
@@ -27,6 +33,7 @@
   <p>안녕하세요</p>
   <button id="testButton" onclick="javascriptFunction()">Click me</button>
 </div>
+<div id="message"></div>
 <script>
   function javascriptFunction() {
     console.log("Button clicked");
@@ -34,7 +41,7 @@
 
   function iOSToJavaScript(message) {
     console.log("Message from iOS: " + message);
-    alert("Message from iOS: " + message);
+    document.getElementById('message').innerText = "iOS 데이터 들어왔음: " + message;
   }
 </script>
 </body>
