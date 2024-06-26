@@ -35,14 +35,14 @@
 </div>
 <div id="message">iOS To JavaScript</div>
 <script>
+  // iOS로 메세지를 보내는 함수
   function javascriptFunction() {
     console.log("Button clicked");
-    // iOS로 메시지 보내기
     if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.buttonClicked) {
       window.webkit.messageHandlers.buttonClicked.postMessage("JS 버튼 눌림");
     }
   }
-
+// iOS에서 데이터 받는 함수
   function iOSToJavaScript(message) {
     console.log("Message from iOS: " + message);
     document.getElementById('message').innerText = "iOS 데이터 들어왔음: " + message;
