@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Test Web Page</title>
   <style>
-    /* 간단한 스타일 추가 */
     body {
       font-family: Arial, sans-serif;
       display: flex;
@@ -25,25 +24,29 @@
       margin-top: 20px;
       font-size: 18px;
       color: blue;
-      visibility: hidden; /* Initially hidden */
+      visibility: hidden;
     }
   </style>
 </head>
 <body>
 <div>
-  <p>안녕하세요</p>
-  <button id="testButton" onclick="javascriptFunction()">Click me</button>
+  <p>JavaScript iOS 데이터 통신 페이지</p>
+  <button id="testButton" onclick="javascriptFunction()">JS To iOS</button>
 </div>
-<div id="message">iOS 데이터 들어왔음</div> <!-- Hidden by default -->
+<div id="message">iOS To JavaScript</div>
 <script>
   function javascriptFunction() {
     console.log("Button clicked");
+    // iOS로 메시지 보내기
+    if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.buttonClicked) {
+      window.webkit.messageHandlers.buttonClicked.postMessage("JS 버튼 눌림");
+    }
   }
 
   function iOSToJavaScript(message) {
     console.log("Message from iOS: " + message);
     document.getElementById('message').innerText = "iOS 데이터 들어왔음: " + message;
-    document.getElementById('message').style.visibility = 'visible'; // Show the message
+    document.getElementById('message').style.visibility = 'visible';
   }
 </script>
 </body>
